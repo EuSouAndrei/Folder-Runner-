@@ -456,35 +456,6 @@ class InputHandler {
     }
   }
 }
-// Em game.js, dentro da classe InputHandler, no construtor:
-
-constructor(game) {
-
-this.game = game;
-
-// ... (listeners existentes)
-
-// Novo listener para o botão fixo
-
-const btnFire = document.getElementById("btnFireMobile");
-
-if(btnFire) {
-
-// Usamos pointerdown para resposta rápida
-
-btnFire.addEventListener("pointerdown", (e) => {
-
-e.preventDefault(); // Evita comportamento de mouse
-
-e.stopPropagation(); // Evita que o toque mova o personagem
-
-this.game.player.shoot();
-
-});
-
-}
-
-}
 
 // =========================
 // 6. GAME ENGINE
