@@ -173,4 +173,33 @@ height: 70px;
 border-radius: 50%;
 
 background: rgba(239, 68, 68, 0.8); /* Vermelho translúcido */
+border: 2px solid rgba(255, 255, 255, 0.5);
+
+color: white;
+
+font-size: 24px;
+
+z-index: 100; /* Acima de tudo */
+
+display: none; /* Escondido por padrão (desktop) */
+
+touch-action: manipulation; /* Evita zoom duplo toque */
+
+box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+}
+
+.mobile-fire-btn:active {
+
+background: rgba(239, 68, 68, 1);
+
+transform: scale(0.95);
+
+}
+/* Mostra apenas em telas menores (celulares) */
+
+@media (max-width: 768px) {
+
+.mobile-fire-btn { display: flex; justify-content:center; align-items:center; }
+
 }
