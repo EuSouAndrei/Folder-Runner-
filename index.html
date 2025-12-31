@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <title>Folder Run — Overpower (Refatorado)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="openingScreen" class="screen">
+    <div class="card">
+      <h1>Pasta do corredor</h1>
+      <p>Versão Refatorada (Modular)</p>
+      <p>Toque/clique para começar.</p>
+      <div class="row" style="margin-top:14px">
+        <button class="btn primary" id="openContinue">Continuar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="startScreen" class="screen hidden">
+    <div class="card">
+      <h1>FOLDER RUN</h1>
+      <p>Controles:</p>
+      <p>
+        Mover: <span class="kbd">A</span><span class="kbd">D</span> ou <span class="kbd">←</span><span class="kbd">→</span>
+        · Atirar: <span class="kbd">Space</span> (ou <span class="kbd">J</span>/<span class="kbd">K</span>)
+        · Pausar: <span class="kbd">P</span> / <span class="kbd">Esc</span>
+        · Reiniciar: <span class="kbd">R</span>
+      </p>
+      <p>No celular: toque no lado esquerdo/direito para trocar de faixa; toque na parte de cima para atirar.</p>
+      <div class="row" style="margin-top:14px">
+        <button class="btn primary" id="startButton">Jogar</button>
+        <button class="btn" id="btnShopOpen2">Loja</button>
+        <button class="btn" id="btnMapOpen2">Mapas</button>
+        <button class="btn" id="btnTrophyOpen2">Conquistas</button>
+      </div>
+      <p style="margin-top:10px">Dica: derrubar inimigos dá mais pontos que só desviar. Pegue moedas para bônus.</p>
+    </div>
+  </section>
+
+  <div id="gameRoot" class="hidden">
+    <canvas id="c"></canvas>
+
+    <div id="hud">
+      <div class="hud-pill"><strong id="hudScore">Score: 0</strong><span id="hudCombo">Combo: x1</span></div>
+      <div class="hud-pill"><strong id="hudLives">Vidas: 3</strong><span id="hudLevel">Nível: 1</span></div>
+      <div class="hud-pill">
+        <button class="btn" id="btnPause">Pausar</button>
+        <button class="btn" id="btnShopOpen">Loja</button>
+        <button class="btn" id="btnMapOpen">Mapas</button>
+        <button class="btn" id="btnTrophyOpen">Conquistas</button>
+        <button class="btn danger" id="btnRestart">Recomeçar</button>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+    <div id="overlayHint">A/D ou ←/→ · Space pra atirar · P pausa</div>
+  </div>
+
+  <section id="endScreen" class="screen hidden">
+    <div class="card">
+      <h1 id="endTitle">Fim</h1>
+      <p id="endMsg">—</p>
+      <p id="endScore">Score: 0</p>
+      <div class="row" style="margin-top:14px">
+        <button class="btn primary" id="endPlayAgain">Jogar de novo</button>
+        <button class="btn" id="endBack">Voltar ao menu</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="shopModal" class="modal hidden">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <h1 style="font-size:18px;margin:0">Loja</h1>
+        <button class="btn" id="shopClose">Fechar</button>
+      </div>
+      <p>Escolha o carro e um “buff” de tiro.</p>
+      <div class="grid" id="shopGrid"></div>
+      <p style="margin-top:12px">
+        <span class="tag">Space = tiro</span>
+        <span class="tag">Cooldown</span>
+        <span class="tag">Dano/Perfuração</span>
+      </p>
+    </div>
+  </div>
+
+  <div id="mapModal" class="modal hidden">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <h1 style="font-size:18px;margin:0">Mapas</h1>
+        <button class="btn" id="mapClose">Fechar</button>
+      </div>
+      <p>Troca o visual e ajusta levemente a “vibe” do jogo (só estética).</p>
+      <div class="grid" id="mapGrid"></div>
+    </div>
+  </div>
+
+  <div id="trophyModal" class="modal hidden">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <h1 style="font-size:18px;margin:0">Conquistas</h1>
+        <button class="btn" id="trophyClose">Fechar</button>
+      </div>
+      <div id="trophyList" style="margin-top:10px"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
