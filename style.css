@@ -156,3 +156,21 @@ canvas{display:block; width:100vw; height:100vh}
   color:var(--muted);
   margin-right:6px;
 }
+/* No style.css */
+
+.mobile-fire-btn {
+
+position: absolute;
+
+bottom: 30px;
+
+right: 20px;
+
+width: 70px;
+
+height: 70px;
+
+border-radius: 50%;
+
+background: rgba(239, 68, 68, 0.8); /* Vermelho translúcido */
+}
